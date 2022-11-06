@@ -20,9 +20,9 @@ ui <- dashboardPage(
   )
 )
 
-server <- function(input, output) {
-  data_inspect_tab.server(input, output)
-  machine_learning_tab.server(input, output)
+server <- function(input, output, session) {
+  data_inspect_tab.server(input, output, session)
+  machine_learning_tab.server(input, output, session)
 }
 
 shinyApp(ui, server)

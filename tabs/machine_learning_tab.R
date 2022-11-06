@@ -11,6 +11,6 @@ machine_learning_tab.body <-
           h2("Widgets tab content")
   )
 
-machine_learning_tab.server <- function(input, output) {
+machine_learning_tab.server <- function(input, output, session) {
 
 }
