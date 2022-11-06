@@ -49,7 +49,7 @@ data_inspect_tab.body <-
         "SQL Query",
         div(style = "height: 10px;"),
         textInput(sql_input.id, "SQL Query",
-          value = "SELECT * FROM anime LIMIT 5;",
+          value = "SELECT type, name, sql  FROM sqlite_schema;",
           width = "calc(100% - 60px)"
         ),
         tags$style(
@@ -86,16 +86,20 @@ data_inspect_tab.body <-
 
 data_inspect_tab.server <- function(input, output, session) {
   output[[users_number.id]] <- renderValueBox({
-    valueBox(users_number, "Users", icon = icon("user"), color = "blue")
+    valueBox(users_number, "Users",
+             icon = icon("user"), color = "blue")
   })
   output[[anime_number.id]] <- renderValueBox({
-    valueBox(anime_number, "Animations", icon = icon("film"), color = "blue")
+    valueBox(anime_number, "Animations",
+             icon = icon("film"), color = "blue")
   })
   output[[studios_number.id]] <- renderValueBox({
-    valueBox(studios_number, "Studios", icon = icon("building"), color = "blue")
+    valueBox(studios_number, "Studios",
+             icon = icon("building"), color = "blue")
   })
   output[[genres_number.id]] <- renderValueBox({
-    valueBox(genres_number, "Genres", icon = icon("camera-movie"), color = "blue")
+    valueBox(genres_number, "Genres",
+             icon = icon("camera-movie"), color = "blue")
   })
 
   reactive_df <- reactiveValues(data = NULL)
